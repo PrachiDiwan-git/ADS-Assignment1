@@ -8,14 +8,14 @@ LINE PLT
 """
 
 # Read csv file 
-data = pd.read_csv('vaccination-data.csv')
-print(data)
+vaccine = pd.read_csv('vaccination-data.csv')
+print(vaccine)
 
 # Plotting multiple lines graph
 plt.figure(figsize=(8,8))
-plt.plot(data["TOTAL_VACCINATIONS_PER100"], label="total Vaccinations")
-plt.plot(data["PERSONS_VACCINATED_1PLUS_DOSE_PER100"], label="1Plus Vaccinations")
-plt.plot(data["PERSONS_FULLY_VACCINATED_PER100"], label="Fully Vaccinations")
+plt.plot(vaccine["TOTAL_VACCINATIONS_PER100"], label="total vaccinations")
+plt.plot(vaccine["PERSONS_VACCINATED_1PLUS_DOSE_PER100"], label="1plus vaccinations")
+plt.plot(vaccine["PERSONS_FULLY_VACCINATED_PER100"], label="fully vaccinations")
 plt.legend()
 plt.xlabel("Data")
 plt.ylabel("Vaccinations")
@@ -26,13 +26,13 @@ plt.show()
 HISTOGRAM PLT
 """
 # Read csv file
-data2 = pd.read_csv('lineplt.csv')
-print(data2)
+avocado = pd.read_csv('lineplt.csv')
+print(avocado)
 
 # Plotting 2 histograms with features
 plt.figure(figsize=(8,8))
-plt.hist(data2["Small Bags"], label="Small Bags", alpha=0.8, bins=4)
-plt.hist(data2["Large Bags"], label="Large Bags", alpha=0.8 ,bins=4)
+plt.hist(avocado["Small Bags"], label="Small Bags", alpha=0.8, bins=4)
+plt.hist(avocado["Large Bags"], label="Large Bags", alpha=0.8 ,bins=4)
 plt.legend()
 plt.xlabel("Number of Bags")
 plt.ylabel("Frequency")
@@ -43,14 +43,14 @@ PIE PLT
 """
 
 # Read csv file
-data3 = pd.read_csv('bookings.csv')
-print(data3)
+book = pd.read_csv('bookings.csv')
+print(book)
 
 # Adding labels to pie graph
 name = ["Summer", "Fall", "Winter", "Spring"]
 
 # Plotting pie chart with values
 plt.figure()
-plt.pie(data3["transactions"], labels=name, autopct='%1.1f%%')
+plt.pie(book["transactions"], labels=name, autopct='%1.1f%%') # 'autopct' is used for adding percentage to portions
 plt.title("Total Number of Transactions in Every Season")
 plt.show()
